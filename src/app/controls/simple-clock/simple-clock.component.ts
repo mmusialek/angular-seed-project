@@ -16,11 +16,6 @@ export class SimpleClockComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-
-    // this.timerObs = Observable.interval(1000);
-    // Observable.interval(1000).subscribe(() => {
-    //   this.timer = new Date().toLocaleTimeString();
-    // });
     this.goOutsideAngular();
   }
 
