@@ -6,6 +6,7 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    const selectedElem = element(by.css('vth-root div div h1'));
+    return selectedElem.getText();
   }
 }
