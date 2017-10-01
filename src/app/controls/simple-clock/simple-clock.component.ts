@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Rx';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 @Component({
   selector: 'vth-simple-clock',
@@ -9,14 +9,31 @@ import { Component, OnInit } from '@angular/core';
 export class SimpleClockComponent implements OnInit {
 
   timer: string;
+  timerObs: Observable<number>;
+
+  constructor(private ngZone: NgZone) {
+
+  }
 
   public ngOnInit(): void {
 
-    Observable.interval(1000).subscribe(() => {
-      this.timer = new Date().toLocaleTimeString();
+    // this.timerObs = Observable.interval(1000);
+    // Observable.interval(1000).subscribe(() => {
+    //   this.timer = new Date().toLocaleTimeString();
+    // });
+    this.goOutsideAngular();
+  }
+
+  goOutsideAngular() {
+    this.ngZone.runOutsideAngular(() => {
+
+      this.timerObs = Observable.interval(1000);
+      Observable.interval(1000).subscribe(() => {
+        this.timer = new Date().toLocaleTimeString();
+        this.ngZone.run(() => {
+        });
+      });
     });
-
-
   }
 
 }
