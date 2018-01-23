@@ -8,10 +8,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular seed project';
-  tab = 'makes';
 
-
-  changeTab(tab: string) {
-    this.tab = tab;
-  }
 }

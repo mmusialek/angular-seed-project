@@ -1,0 +1,18 @@
+<div>
+  <h2>car makes</h2>
+
+  <div>
+    <label>Marka samochodu</label>
+    <input [(ngModel)]="carMake">
+    <button (click)="addCarMake()">Dodaj</button>
+  </div>
+
+  <br><br><br><hr>
+
+  <div>
+    <h3>Dodane marki</h3>
+    <ul>
+      <li *ngFor="let make of carDictionaryService.makeList">{{make}}</li>
+    </ul>
+  </div>
+</div>

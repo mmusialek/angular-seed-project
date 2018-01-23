@@ -1,23 +1,45 @@
 import { SimpleClockComponent } from './controls/simple-clock/simple-clock.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CarMakeComponent } from './controls/car-makes/car-make.component';
-import { CarModelComponent } from './controls/car-models/car-model.component';
-import { CarDictionaryService } from './services/car-dictionary.service';
+import { CarMakeMethod1Component } from './modules/data-sharing/method-1/car-make.component';
+import { CarModelMethod1Component } from './modules/data-sharing/method-1/car-model.component';
+import { CarModelMethod2Component } from './modules/data-sharing/method-2/car-model.component';
+import { CarMakeMethod2Component } from './modules/data-sharing/method-2/car-make.component';
+import { CarDictionary1Service } from './modules/data-sharing/method-1/car-dictionary-1.service';
+import { CarDictionary2Service } from './modules/data-sharing/method-2/car-dictionary-2.service';
+import { CarDictionary3Service } from './modules/data-sharing/method-3/car-dictionary-3.service';
+import { CarModelMethod3Component } from './modules/data-sharing/method-3/car-model.component';
+import { CarMakeMethod3Component } from './modules/data-sharing/method-3/car-make.component';
+import { CarModelMethod4Component } from './modules/data-sharing/method-4/car-model.component';
+import { CarMakeMethod4Component } from './modules/data-sharing/method-4/car-make.component';
+import { CarViewerComponent } from './modules/data-sharing/method-4/car-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SimpleClockComponent,
-    CarMakeComponent,
-    CarModelComponent
+    CarMakeMethod1Component,
+    CarModelMethod1Component,
+    CarMakeMethod2Component,
+    CarModelMethod2Component,
+    CarMakeMethod3Component,
+    CarModelMethod3Component,
+    CarMakeMethod4Component,
+    CarModelMethod4Component,
+    CarViewerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [CarDictionaryService],
+  providers: [
+    CarDictionary1Service,
+    CarDictionary2Service,
+    CarDictionary3Service
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
