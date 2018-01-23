@@ -7,4 +7,22 @@
 
   <vth-simple-clock></vth-simple-clock>
 
+  <br>
+  <br>
+  <br>
+
+  <div>
+    <button (click)="changeTab('makes')">Makes</button>
+    <button (click)="changeTab('models')">Models</button>
+
+
+    <div *ngIf="tab==='makes'">
+      <vth-car-make></vth-car-make>
+    </div>
+    <div *ngIf="tab==='models'">
+      <vth-car-model></vth-car-model>
+    </div>
+
+  </div>
+
 </div>

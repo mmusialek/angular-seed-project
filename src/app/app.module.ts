@@ -3,16 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { CarMakeComponent } from './controls/car-makes/car-make.component';
+import { CarModelComponent } from './controls/car-models/car-model.component';
+import { CarDictionaryService } from './services/car-dictionary.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpleClockComponent
+    SimpleClockComponent,
+    CarMakeComponent,
+    CarModelComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [CarDictionaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
