@@ -3,22 +3,39 @@ h2 {
   background-color: lightseagreen;
 }
 
-.vth-main-container {
-  width: 90%;
-  margin: 20px;
-}
-
-.vth-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  .vth-container__column {
-    margin-right: 70px;
-    padding: 5px;
-    background-color: #F5F5F5;
+vth-data-sharing {
+  .vth-main-container {
+    width: 90%;
+    margin: 20px;
+  }
+  .vth-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .vth-container__column {
+      margin-right: 70px;
+      padding: 5px;
+      background-color: #F5F5F5;
+    }
   }
 }
 
 vth-car-viewer-method-4 {
   display: block;
+}
+
+.vth-main-menu {
+  ul {
+    padding-right: 0px;
+    margin: 0px;
+    li {
+      list-style: none;
+      display: inline-block;
+      background-color: lightgray;
+      padding: 10px 20px;
+      &:hover{
+        background-color: darken(lightgray, 10%);
+      }
+    }
+  }
 }
