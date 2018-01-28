@@ -8,7 +8,9 @@ import { CustomerService } from './customer.service';
 export class CustomerResolverService implements Resolve<CustomerListViewModel> {
 
   // tslint:disable:max-line-length
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): CustomerListViewModel | Observable<CustomerListViewModel> | Promise<CustomerListViewModel> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
+    CustomerListViewModel | Observable<CustomerListViewModel> | Promise<CustomerListViewModel> {
+
     return this._customerService.getCustomers();
 
   }
